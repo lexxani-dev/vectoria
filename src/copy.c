@@ -1,5 +1,5 @@
 #include "vectoria.h"
-#include "stddef.h"
+#include <stddef.h>
 
 void vct_copy(int n, const double *x, int incx, double *y, int incy)
 {
