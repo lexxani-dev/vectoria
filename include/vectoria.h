@@ -202,7 +202,7 @@ extern "C"
      *     first element used by the operation.
      *   - Function does not modify the input vector.
      */
-    double vct_asum(int n, const double *x, int incx);
+    double vct_absum(int n, const double *x, int incx);
 
     /*
      * Finds the index of the element with the largest absolute value in a double-precision vector.
