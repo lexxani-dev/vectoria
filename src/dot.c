@@ -1,5 +1,5 @@
 #include "vectoria.h"
-#include <stdlib.h>
+#include <stddef.h>
 
 double vct_dot(int n, const double *x, int incx, const double *y, int incy)
 {
@@ -9,9 +9,9 @@ double vct_dot(int n, const double *x, int incx, const double *y, int incy)
   }
 
   double s = 0.0;
-  for (int i = 0; i < n; i++)
+  for (int i = 0; i < n; i++, x += incx, y += incy)
   {
-    s += x[i] * y[i];
+    s += (*x) * (*y);
   }
   return s;
 }
