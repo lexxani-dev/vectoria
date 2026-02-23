@@ -1,0 +1,11 @@
+/build/
+/*.o
+/*.a
+/*.so
+/*.dll
+/*.dylib
+*.exe
+*.out
+*.log
+.DS_Store
+.vscode/
