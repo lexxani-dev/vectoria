@@ -11,21 +11,21 @@ int main(void)
         double x[3] = {1, 2, 3}, y[3] = {4, 5, 6};
         assert(eq(vct_dot(3, x, 1, y, 1), 32.0));
     }
-    { // n=0
+    { // n<=0
         double x[] = {1}, y[] = {2};
         assert(eq(vct_dot(0, x, 1, y, 1), 0.00));
     }
-    { // inc != 1
+    { // inc!=1
         // NOTE:
         // dot = sum_{i=0..n-1} x[i*incx] * y[i*incy]
-        // -> there's potential for out of bounds exceptions
+        // -> there is potential for out of bounds exceptions
         // Required buffer lengths (assuming pointers refer to the first element used):
-        //   len_x >= 1 + (n-1)*abs(incx)
-        //   len_y >= 1 + (n-1)*abs(incy)
+        // len_x >= 1 + (n-1)*abs(incx)
+        // len_y >= 1 + (n-1)*abs(incy)
         double x[5] = {1, 2, 3, 4, 5}, y[3] = {6, 7, 8};
         assert(eq(vct_dot(3, x, 2, y, 1), 67.00));
     }
-    { // inc < 0
+    { // inc<0
         double x[3] = {1, 2, 3}, y[3] = {4, 5, 6};
         assert(eq(vct_dot(3, &x[2], -1, y, 1), 28.0));
     }
