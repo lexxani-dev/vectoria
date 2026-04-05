@@ -149,4 +149,6 @@ int main(void)
             assert(eq(*py, *pe));
         }
     }
+    printf("Ok\n");
+    return 0;
 }

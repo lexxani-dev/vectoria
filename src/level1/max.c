@@ -12,14 +12,14 @@ int vct_iamax(int n, const double *x, int incx)
     int idx_max = 0;
     double max_val = fabs(*x);
 
-    for (int i = 1; i < n; i++, x += incx)
+    for (int i = 1; i < n; i++)
     {
-        if (fabs(*x) > max_val)
+        double val = fabs(x[i * incx]);
+        if (val > max_val)
         {
-            max_val = fabs(*x);
+            max_val = val;
             idx_max = i;
         }
     }
-
     return idx_max;
 }
